@@ -9,17 +9,18 @@ class ProductsPage {
   }
 
   assertProductVisible(productName) {
-    cy.contains(".productinfo, .product-information, .cart_description", productName).should("be.visible");
+    cy.get(".features_items").contains(".productinfo", productName).should("be.visible");
   }
 
   assertProductNotVisible(productName) {
-    cy.contains(".productinfo", productName).should("not.exist");
+    cy.get(".features_items").contains(".productinfo", productName).should("not.exist");
   }
 
   addProductToCart(productName) {
     cy.contains(".product-image-wrapper", productName)
       .scrollIntoView()
       .within(() => {
+        // O site exibe a acao em overlay de hover; no headless, o force reduz flake desse overlay externo.
         cy.contains("a", "Add to cart").click({ force: true });
       });
   }

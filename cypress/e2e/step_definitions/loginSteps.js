@@ -31,7 +31,6 @@ When("realizo login com credenciais invalidas", () => {
 
 Then("devo visualizar o usuario logado", () => {
   homePage.assertLoggedUser(validUser.name);
-  cy.deleteAutomationExerciseUser(validEmail, validUser.password);
 });
 
 Then("devo visualizar mensagem de erro de login", () => {

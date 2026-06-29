@@ -1,6 +1,6 @@
 # Scripts auxiliares
 
-Estes scripts sao apoios estruturais para evidencias, resumo de execucao e futura integracao com Xray. A suite principal continua sendo executada por:
+Estes scripts sao apoios estruturais para evidencias e futura integracao com Xray. A suite principal continua sendo executada por:
 
 ```bash
 npm.cmd run cy:run
@@ -24,15 +24,9 @@ Executa um GET na action publica do Trello, valida status code, captura `data.li
 npm.cmd run evidence:api
 ```
 
-## Relatorio auxiliar
+## Relatorio real
 
-Gera um resumo HTML estatico em `cypress/reports/execution-summary.html`.
-
-```bash
-npm.cmd run report:summary
-```
-
-Este relatorio e apenas um resumo auxiliar. A fonte real de execucao continua sendo o Cypress.
+O relatorio HTML da suite e gerado pelo `@badeball/cypress-cucumber-preprocessor` a partir da execucao real do Cypress em `cypress/reports/cucumber-report.html`.
 
 ## Xray
 

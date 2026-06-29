@@ -4,6 +4,11 @@ class CartPage {
     cy.contains("#cart_info", productName).should("be.visible");
   }
 
+  assertProductNotInCart(productName) {
+    cy.get("#cart_info").should("be.visible");
+    cy.contains("#cart_info", productName).should("not.exist");
+  }
+
   assertCartIsEmpty() {
     cy.contains("Cart is empty!").should("be.visible");
   }

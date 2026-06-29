@@ -1,3 +1,5 @@
+import { registerCreatedUser } from "./testUsers";
+
 Cypress.Commands.add("dismissConsentIfVisible", () => {
   cy.get("body").then(($body) => {
     const consentButton = $body.find("button:contains('Consent'), button:contains('Accept')");
@@ -35,6 +37,7 @@ Cypress.Commands.add("createAutomationExerciseUser", (user, email) => {
   }).then((response) => {
     expect(response.status).to.eq(200);
     expect(response.body).to.contain("201");
+    registerCreatedUser(email, user.password);
   });
 });
 
@@ -50,5 +53,27 @@ Cypress.Commands.add("deleteAutomationExerciseUser", (email, password) => {
     failOnStatusCode: false,
   }).then((response) => {
     expect(response.status).to.eq(200);
+  });
+});
+
+Cypress.Commands.add("cleanupAutomationExerciseUser", (email, password) => {
+  cy.then(() => {
+    const body = new URLSearchParams({ email, password });
+
+    return fetch(`${Cypress.config("baseUrl")}/api/deleteAccount`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          cy.log(`Falha ignorada na limpeza do usuario ${email}. Status: ${response.status}`);
+        }
+      })
+      .catch((error) => {
+        cy.log(`Falha ignorada na limpeza do usuario ${email}: ${error.message}`);
+      });
   });
 });

@@ -10,10 +10,9 @@ let checkoutProduct;
 
 Given("que estou autenticado para revisar o pedido", () => {
   cy.fixture("users").then(({ validUser }) => {
-    checkoutUser = validUser;
     const email = `qa.checkout.${Date.now()}@example.com`;
 
-    checkoutUser.email = email;
+    checkoutUser = { ...validUser, email };
     cy.createAutomationExerciseUser(checkoutUser, email);
     homePage.visit();
     homePage.goToLogin();
@@ -36,7 +35,6 @@ When("adiciono um produto e prossigo para o checkout", () => {
 Then("devo visualizar o produto na revisao do pedido", () => {
   checkoutPage.assertAddressDetailsVisible();
   checkoutPage.assertReviewOrder(checkoutProduct);
-  cy.deleteAutomationExerciseUser(checkoutUser.email, checkoutUser.password);
 });
 
 Given("que adicionei um produto no carrinho sem login", () => {
