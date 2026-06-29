@@ -1,0 +1,773 @@
+[
+  {
+    "description": "  Como usuario do e-commerce\n  Quero adicionar produtos ao carrinho\n  Para revisar os itens antes do checkout",
+    "elements": [
+      {
+        "description": "",
+        "id": "adicionar-produto-ao-carrinho;adicionar-produto-existente-ao-carrinho",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Adicionar produto existente ao carrinho",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "que estou na pagina de produtos para adicionar item",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6664000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "busco e adiciono um produto valido ao carrinho",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1745000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "devo ver a confirmacao de produto adicionado",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 255000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "devo visualizar o produto adicionado no carrinho",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1676000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 15000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 6
+          },
+          {
+            "name": "@smoke",
+            "line": 6
+          },
+          {
+            "name": "@positive",
+            "line": 6
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "adicionar-produto-ao-carrinho;validar-que-produto-nao-adicionado-nao-aparece-no-carrinho",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Validar que produto nao adicionado nao aparece no carrinho",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "que estou na pagina de produtos para adicionar item",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5815000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "adiciono apenas um produto ao carrinho",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2114000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "devo visualizar apenas o produto adicionado no carrinho",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1713000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "nao devo visualizar outro produto nao adicionado no carrinho",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 33000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 13
+          },
+          {
+            "name": "@negative",
+            "line": 13
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "adicionar-produto-ao-carrinho",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Adicionar produto ao carrinho",
+    "tags": [],
+    "uri": "cypress\\e2e\\features\\add_to_cart.feature"
+  },
+  {
+    "description": "  Como candidato em um teste tecnico\n  Quero validar uma API publica com GET\n  Para demonstrar automacao de API no Cypress",
+    "elements": [
+      {
+        "description": "",
+        "id": "api-trello;consultar-action-existente-no-trello",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Consultar action existente no Trello",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "envio uma requisicao GET para uma action existente do Trello",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 365000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "o status code da action deve ser 200",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "devo exibir o campo name da estrutura list",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 6
+          },
+          {
+            "name": "@smoke",
+            "line": 6
+          },
+          {
+            "name": "@positive",
+            "line": 6
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "api-trello;consultar-action-inexistente-no-trello",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Consultar action inexistente no Trello",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "envio uma requisicao GET para uma action inexistente do Trello",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 189000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "o status code da action inexistente deve indicar erro",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 11000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 12
+          },
+          {
+            "name": "@negative",
+            "line": 12
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "api-trello",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "API Trello",
+    "tags": [],
+    "uri": "cypress\\e2e\\features\\api_trello.feature"
+  },
+  {
+    "description": "  Como usuario do e-commerce\n  Quero revisar o pedido no checkout\n  Para validar os produtos antes do pagamento",
+    "elements": [
+      {
+        "description": "",
+        "id": "checkout;validar-produto-na-revisao-do-pedido",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Validar produto na revisao do pedido",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "que estou autenticado para revisar o pedido",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10102000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "adiciono um produto e prossigo para o checkout",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8004000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "devo visualizar o produto na revisao do pedido",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 52000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 6
+          },
+          {
+            "name": "@smoke",
+            "line": 6
+          },
+          {
+            "name": "@positive",
+            "line": 6
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "checkout;tentar-checkout-sem-estar-autenticado",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Tentar checkout sem estar autenticado",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "que adicionei um produto no carrinho sem login",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8752000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "tento prosseguir para o checkout sem autenticacao",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 110000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "devo visualizar a solicitacao de cadastro ou login",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 55000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 19000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 12
+          },
+          {
+            "name": "@negative",
+            "line": 12
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "checkout",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Checkout",
+    "tags": [],
+    "uri": "cypress\\e2e\\features\\checkout.feature"
+  },
+  {
+    "description": "  Como candidato em um teste tecnico\n  Quero validar login positivo e negativo\n  Para demonstrar automacao Web com BDD",
+    "elements": [
+      {
+        "description": "",
+        "id": "login;login-com-credenciais-validas",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Login com credenciais validas",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "que estou na pagina de cadastro e login",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4319000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "existe uma conta valida criada para login",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 423000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "realizo login com a conta valida",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4265000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "devo visualizar o usuario logado",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 16000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 6
+          },
+          {
+            "name": "@smoke",
+            "line": 6
+          },
+          {
+            "name": "@positive",
+            "line": 6
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login;login-com-credenciais-invalidas",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Login com credenciais invalidas",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "que estou na pagina de cadastro e login",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3773000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "realizo login com credenciais invalidas",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2011000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "devo visualizar mensagem de erro de login",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 23000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 13
+          },
+          {
+            "name": "@negative",
+            "line": 13
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login",
+    "tags": [],
+    "uri": "cypress\\e2e\\features\\login.feature"
+  },
+  {
+    "description": "  Como usuario do e-commerce\n  Quero buscar produtos\n  Para encontrar itens disponiveis para compra",
+    "elements": [
+      {
+        "description": "",
+        "id": "busca-de-produto;buscar-produto-existente",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Buscar produto existente",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "que estou na pagina de produtos para busca",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6567000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "busco por um produto existente",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1997000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "devo visualizar o produto nos resultados",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 35000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 6
+          },
+          {
+            "name": "@smoke",
+            "line": 6
+          },
+          {
+            "name": "@positive",
+            "line": 6
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "busca-de-produto;buscar-produto-inexistente",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Buscar produto inexistente",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "que estou na pagina de produtos para busca",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5743000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "busco por um produto inexistente",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2196000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "nao devo visualizar produto com o nome pesquisado",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 20000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web",
+            "line": 12
+          },
+          {
+            "name": "@negative",
+            "line": 12
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "busca-de-produto",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Busca de produto",
+    "tags": [],
+    "uri": "cypress\\e2e\\features\\search.feature"
+  }
+]

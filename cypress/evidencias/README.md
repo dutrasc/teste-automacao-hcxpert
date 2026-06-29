@@ -14,15 +14,8 @@ Screenshots automaticos do Cypress sao gerados em caso de falha durante a execuc
 
 Prints manuais de browser inteiro, se necessarios, devem ser salvos na subpasta da feature correspondente.
 
-## Execucao local validada
+O relatorio HTML real da execucao Cucumber/Cypress e gerado em `cypress/reports/cucumber-report.html` apos `npm.cmd run cy:run`.
 
-- 5 specs executadas
-- 10 testes executados
-- 10 testes passando
-- 0 falhas
+Os screenshots automaticos de falha ficam em `cypress/screenshots/`.
 
-Comando usado para validacao:
-
-```bash
-npm.cmd run cy:run
-```
+Os screenshots automaticos em `cypress/screenshots/` sao gerados pelo Cypress em falhas durante a execucao, inclusive em tentativas intermediarias quando ha retry configurado. O status final da suite deve ser consultado no relatorio real em `cypress/reports/cucumber-report.html`.

@@ -4,6 +4,7 @@ import productsPage from "../../support/page_objects/productsPage";
 import cartPage from "../../support/page_objects/cartPage";
 
 let cartProduct;
+let productNotAdded;
 
 Given("que estou na pagina de produtos para adicionar item", () => {
   homePage.visit();
@@ -27,14 +28,20 @@ Then("devo visualizar o produto adicionado no carrinho", () => {
   cartPage.assertProductInCart(cartProduct);
 });
 
-Given("que estou com o carrinho vazio", () => {
-  homePage.visit();
+When("adiciono apenas um produto ao carrinho", () => {
+  cy.fixture("users").then(({ products }) => {
+    cartProduct = products.valid;
+    productNotAdded = products.notAdded;
+    productsPage.search(cartProduct);
+    productsPage.addProductToCart(cartProduct);
+  });
 });
 
-When("acesso a pagina do carrinho sem adicionar item", () => {
-  homePage.goToCart();
+Then("devo visualizar apenas o produto adicionado no carrinho", () => {
+  productsPage.viewCartFromModal();
+  cartPage.assertProductInCart(cartProduct);
 });
 
-Then("devo visualizar o carrinho vazio", () => {
-  cartPage.assertCartIsEmpty();
+Then("nao devo visualizar outro produto nao adicionado no carrinho", () => {
+  cartPage.assertProductNotInCart(productNotAdded);
 });

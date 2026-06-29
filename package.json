@@ -1,25 +1,29 @@
 {
   "name": "teste-automacao-hcxpert",
   "version": "1.0.0",
-  "description": "Framework de automacao Cypress, JavaScript e Cucumber/BDD para testes Web e API.",
+  "description": "Framework de automacao Web e API com Cypress, JavaScript, Cucumber/BDD, Page Object Model e evidencias reais de execucao.",
   "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:chrome": "cypress run --browser chrome",
     "evidence:api": "node scripts/capture-api-evidencias.mjs",
-    "report:summary": "node scripts/generate-report.mjs",
     "xray:upload": "node scripts/upload-xray.mjs",
     "test": "npm run cy:run"
   },
   "keywords": [],
-  "author": "",
+  "author": "dutrasc",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutrasc/teste-automacao-hcxpert.git"
+  },
   "license": "ISC",
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^25.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
-    "cypress": "^15.18.0",
-    "dotenv": "^17.4.2",
-    "multiple-cucumber-html-reporter": "^3.10.0"
+    "cypress": "^15.18.0"
   }
 }

@@ -12,6 +12,16 @@ module.exports = defineConfig({
     pageLoadTimeout: 60000,
     viewportWidth: 1366,
     viewportHeight: 768,
+    retries: {
+      runMode: 2,
+      openMode: 0,
+    },
+    screenshotOnRunFailure: true,
+    video: false,
+    env: {
+      trelloActionUrl: "https://api.trello.com/1/actions/592f11060f95a3d3d46a987a",
+      trelloInvalidActionUrl: "https://api.trello.com/1/actions/action-inexistente",
+    },
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
 
