@@ -6,3 +6,5 @@ cypress/reports/
 .env
 .DS_Store
 npm-debug.log*
+debug.log
+debug.log
