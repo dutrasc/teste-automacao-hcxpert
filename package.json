@@ -7,6 +7,9 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:chrome": "cypress run --browser chrome",
+    "evidence:api": "node scripts/capture-api-evidencias.mjs",
+    "report:summary": "node scripts/generate-report.mjs",
+    "xray:upload": "node scripts/upload-xray.mjs",
     "test": "npm run cy:run"
   },
   "keywords": [],
