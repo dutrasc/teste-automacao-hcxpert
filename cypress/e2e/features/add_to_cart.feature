@@ -16,3 +16,9 @@ Feature: Adicionar produto ao carrinho
     When adiciono apenas um produto ao carrinho
     Then devo visualizar apenas o produto adicionado no carrinho
     And nao devo visualizar outro produto nao adicionado no carrinho
+
+  @web @cart @regression
+  Scenario: Adicionar dois produtos ao carrinho
+    Given que estou na pagina de produtos para adicionar item
+    When adiciono dois produtos ao carrinho
+    Then devo visualizar os dois produtos no carrinho

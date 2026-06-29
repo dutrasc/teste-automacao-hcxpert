@@ -45,6 +45,12 @@ Ou:
 npm test
 ```
 
+## Lint
+
+```bash
+npm.cmd run lint
+```
+
 ## Execucao interativa
 
 ```bash
@@ -83,8 +89,8 @@ cypress/reports/cucumber-report.json
 
 ## Evidencias
 
-- Evidencias manuais devem ser salvas por feature em `cypress/evidencias/<feature>/`.
-- Screenshots automaticos de falha do Cypress ficam em `cypress/screenshots/`.
+- Evidencias manuais/intencionais devem ser salvas por feature em `cypress/evidencias/<feature>/` e podem ser versionadas.
+- Relatorios e screenshots automaticos de execucao ficam em `cypress/reports/` e `cypress/screenshots/` e nao devem ser versionados.
 - Os screenshots automaticos em `cypress/screenshots/` sao gerados pelo Cypress em falhas durante a execucao, inclusive em tentativas intermediarias quando ha retry configurado. O status final da suite deve ser consultado no relatorio real em `cypress/reports/cucumber-report.html`.
 - Evidencia HTML da API Trello pode ser gerada com:
 
@@ -99,6 +105,10 @@ npm.cmd run evidence:api
 ```bash
 npm.cmd run xray:upload
 ```
+
+## CI
+
+O GitHub Actions executa lint e suite Cypress com timeout de seguranca. Relatorios em `cypress/reports/` e screenshots em `cypress/screenshots/` sao publicados como artifacts do workflow, sem versionar esses arquivos no repositorio.
 
 ## Decisoes tecnicas
 

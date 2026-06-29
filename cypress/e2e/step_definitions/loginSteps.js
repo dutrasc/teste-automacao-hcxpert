@@ -1,4 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { createAutomationExerciseUser } from "../../support/api/automationExerciseApi";
 import homePage from "../../support/page_objects/homePage";
 import loginPage from "../../support/page_objects/loginPage";
 
@@ -15,7 +16,7 @@ Given("existe uma conta valida criada para login", () => {
     validUser = user;
     validEmail = `qa.login.${Date.now()}@example.com`;
 
-    cy.createAutomationExerciseUser(validUser, validEmail);
+    createAutomationExerciseUser(validUser, validEmail);
   });
 });
 

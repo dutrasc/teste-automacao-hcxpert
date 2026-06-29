@@ -1,4 +1,5 @@
 import { After } from "@badeball/cypress-cucumber-preprocessor";
+import { cleanupAutomationExerciseUser } from "../../support/api/automationExerciseApi";
 import { clearCreatedUsers, getCreatedUsers } from "../../support/testUsers";
 
 After(() => {
@@ -10,7 +11,7 @@ After(() => {
 
   cy.wrap(users, { log: false })
     .each(({ email, password }) => {
-      cy.cleanupAutomationExerciseUser(email, password);
+      cleanupAutomationExerciseUser(email, password);
     })
     .then(() => {
       clearCreatedUsers();

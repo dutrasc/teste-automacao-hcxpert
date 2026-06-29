@@ -8,6 +8,7 @@
     "cy:run": "cypress run",
     "cy:run:chrome": "cypress run --browser chrome",
     "evidence:api": "node scripts/capture-api-evidencias.mjs",
+    "lint": "eslint .",
     "xray:upload": "node scripts/upload-xray.mjs",
     "test": "npm run cy:run"
   },
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^25.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
-    "cypress": "^15.18.0"
+    "cypress": "^15.18.0",
+    "eslint": "^10.6.0"
   }
 }
