@@ -60,11 +60,13 @@ As URLs da API Trello usadas pelos testes Cypress foram movidas para `env` em `c
 
 Trade-off: a configuracao concentra detalhes tecnicos, mas o Gherkin e os steps ficam mais legiveis.
 
-## Xray opcional
+## Xray Cloud opcional
 
-`scripts/upload-xray.mjs` foi mantido como esqueleto seguro. Sem `XRAY_CLIENT_ID`, `XRAY_CLIENT_SECRET` e `XRAY_PROJECT_KEY`, ele informa pendencia de credenciais e encerra com sucesso sem upload real.
+`scripts/upload-xray.mjs` agora implementa uma integracao real com Xray Cloud, protegida por variaveis de ambiente. Sem `XRAY_CLIENT_ID` ou `XRAY_CLIENT_SECRET`, nenhuma chamada HTTP e feita, o script encerra com sucesso e nao simula upload.
 
-Trade-off: a integracao ainda nao entrega rastreabilidade automatica, mas nao simula envio inexistente.
+Trade-off: a integracao nao foi executada nesta entrega por nao haver instancia/credenciais Xray disponiveis, mas usa como payload o relatorio real do Cucumber em `cypress/reports/cucumber-report.json`.
+
+Observacao tecnica: para os resultados mapearem em Tests existentes, os testes Cucumber precisam ser previamente criados/exportados do Xray. Caso contrario, a importacao pode criar novos Tests/Test Executions conforme o comportamento da API do Xray Cloud.
 
 ## GitHub Actions
 

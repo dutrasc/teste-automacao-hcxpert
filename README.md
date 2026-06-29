@@ -94,7 +94,7 @@ npm.cmd run evidence:api
 
 ## Xray
 
-`scripts/upload-xray.mjs` esta preparado como integracao futura/opcional. Sem as variaveis `XRAY_CLIENT_ID`, `XRAY_CLIENT_SECRET` e `XRAY_PROJECT_KEY`, nenhum upload real e feito.
+`scripts/upload-xray.mjs` implementa integracao Xray Cloud opcional, real e protegida por variaveis de ambiente. Sem credenciais, nenhuma chamada HTTP e feita e nenhum resultado e simulado. Veja detalhes em `scripts/README.md`.
 
 ```bash
 npm.cmd run xray:upload
@@ -109,4 +109,4 @@ As decisoes de arquitetura, robustez, evidencias, limpeza de massa, tags, relato
 - O fluxo Web depende do site publico `https://www.automationexercise.com`.
 - A API validada e publica e externa ao projeto.
 - O checkout valida carrinho/revisao do pedido e nao realiza pagamento real.
-- Docker e upload real para Xray nao fazem parte desta etapa.
+- Docker nao faz parte desta etapa.
