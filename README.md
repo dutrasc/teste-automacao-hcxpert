@@ -108,7 +108,7 @@ npm.cmd run xray:upload
 
 ## CI
 
-O GitHub Actions executa lint e suite Cypress. Relatorios em `cypress/reports/` e screenshots em `cypress/screenshots/` sao publicados como artifacts do workflow, sem versionar esses arquivos no repositorio.
+O GitHub Actions executa lint e suite Cypress com timeout de seguranca. Relatorios em `cypress/reports/` e screenshots em `cypress/screenshots/` sao publicados como artifacts do workflow, sem versionar esses arquivos no repositorio.
 
 ## Decisoes tecnicas
 

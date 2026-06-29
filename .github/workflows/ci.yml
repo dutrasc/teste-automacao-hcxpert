@@ -7,6 +7,7 @@ on:
 jobs:
   e2e:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
@@ -24,6 +25,7 @@ jobs:
         run: npm run lint
 
       - name: Run Cypress tests
+        timeout-minutes: 15
         run: npm run cy:run
 
       - name: Upload Cypress reports

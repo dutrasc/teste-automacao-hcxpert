@@ -74,6 +74,8 @@ Foi criado um workflow simples para rodar a suite em `push` e `pull_request`. Co
 
 Trade-off: aumenta confiabilidade de entrega, mas a estabilidade final ainda depende do ambiente externo.
 
+O job `e2e` e o step de Cypress possuem timeout para evitar pipeline preso quando o site externo ou o browser travam. Trade-off: o timeout protege a esteira, mas pode encerrar uma execucao real muito lenta.
+
 ## Tags BDD
 
 Foram adicionadas tags simples como `@web`, `@api`, `@smoke`, `@positive` e `@negative`. Elas permitem execucao seletiva sem complicar a execucao padrao.
