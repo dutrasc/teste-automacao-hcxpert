@@ -79,3 +79,51 @@ Trade-off: aumenta confiabilidade de entrega, mas a estabilidade final ainda dep
 Foram adicionadas tags simples como `@web`, `@api`, `@smoke`, `@positive` e `@negative`. Elas permitem execucao seletiva sem complicar a execucao padrao.
 
 Trade-off: exige disciplina para manter tags coerentes ao criar novos cenarios.
+
+## Contrato da API Trello
+
+O teste positivo da API Trello agora valida contrato minimo da resposta: estrutura `data`, `data.list`, campos de lista/cartao/quadro, identificador da action, tipo e data parseavel. Isso aumenta robustez porque detecta mudancas silenciosas na forma da resposta, nao apenas status code.
+
+Trade-off: a validacao foi feita manualmente para nao adicionar dependencia nova de schema validation; ela e legivel e suficiente para o teste tecnico, mas menos reutilizavel que um validador JSON Schema dedicado.
+
+## Flake do login negativo
+
+A causa provavel do flake era interacao com o formulario antes de todos os elementos estarem visiveis, habilitados e estabilizados apos a navegacao para Signup/Login. O Page Object de login passou a validar titulo, inputs e botao antes de digitar/clicar, e a mensagem negativa e validada por seletor de paragrafo visivel.
+
+Trade-off: retries continuam configurados como rede de seguranca para site externo, mas a correcao prioriza estado real da tela em vez de depender do retry.
+
+## Camada dedicada de API
+
+Setup e cleanup de usuarios do Automation Exercise foram extraidos para `cypress/support/api/automationExerciseApi.js`. Isso separa chamadas de API de comandos gerais de UI e deixa `commands.js` focado no suporte ao browser.
+
+Trade-off: a arquitetura ganha um arquivo a mais, mas melhora coesao e reduz duplicacao de caminho de cleanup.
+
+## Carrinho com multiplos itens
+
+Foi adicionado um unico cenario de regressao para adicionar dois produtos e validar ambos no carrinho. Esse fluxo representa risco real porque carrinhos frequentemente falham em acumulacao, quantidade ou sobrescrita de itens.
+
+Trade-off: adiciona cobertura relevante sem aumentar muito o volume da suite nem depender de login ou pagamento.
+
+## Artefatos automaticos fora do versionamento
+
+`cypress/reports/` e `cypress/screenshots/` permanecem ignorados pelo Git; evidencias manuais em `cypress/evidencias/` continuam versionaveis. No CI, relatorios e screenshots sao publicados como artifacts.
+
+Trade-off: o repositorio fica limpo, mas evidencias automaticas devem ser consultadas localmente ou nos artifacts do workflow.
+
+## npm ci --legacy-peer-deps no CI
+
+O CI mantem `npm ci --legacy-peer-deps` porque `@badeball/cypress-cucumber-preprocessor@25.0.0` declara peer dependency ate Cypress `15.17.0`, enquanto o projeto usa Cypress `15.18.0` e ja foi validado localmente. Remover a flag quebraria a instalacao antes dos testes.
+
+Trade-off: a flag contorna um conflito de peer range conhecido, mas deve ser removida quando as versoes forem alinhadas oficialmente.
+
+## Lint enxuto
+
+Foi adicionado ESLint com configuracao flat simples para JavaScript, Cypress e scripts Node. O lint melhora manutencao ao detectar variaveis nao usadas e globais incorretas antes da execucao.
+
+Trade-off: adiciona uma etapa ao CI e uma devDependency, mas evita reformatacao massiva e mantem o escopo controlado.
+
+## Smoke no CI
+
+A execucao por tag `@smoke` foi avaliada, mas nao adicionada ao CI para evitar duplicar tempo de execucao. A suite completa ja roda no workflow e as tags seguem disponiveis para execucao seletiva local.
+
+Trade-off: o CI fica simples e direto, mas nao produz uma trilha separada de smoke.

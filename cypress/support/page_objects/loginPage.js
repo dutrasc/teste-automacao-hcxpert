@@ -1,4 +1,11 @@
 class LoginPage {
+  assertLoginFormReady() {
+    cy.contains("h2", "Login to your account").should("be.visible");
+    cy.get('[data-qa="login-email"]').should("be.visible").and("be.enabled");
+    cy.get('[data-qa="login-password"]').should("be.visible").and("be.enabled");
+    cy.get('[data-qa="login-button"]').should("be.visible").and("be.enabled");
+  }
+
   fillSignup(name, email) {
     cy.get('[data-qa="signup-name"]').clear().type(name);
     cy.get('[data-qa="signup-email"]').clear().type(email);
@@ -31,13 +38,14 @@ class LoginPage {
   }
 
   login(email, password) {
-    cy.get('[data-qa="login-email"]').clear().type(email);
-    cy.get('[data-qa="login-password"]').clear().type(password);
+    this.assertLoginFormReady();
+    cy.get('[data-qa="login-email"]').clear().should("have.value", "").type(email);
+    cy.get('[data-qa="login-password"]').clear().should("have.value", "").type(password);
     cy.get('[data-qa="login-button"]').click();
   }
 
   assertInvalidLoginMessage() {
-    cy.contains("Your email or password is incorrect!").should("be.visible");
+    cy.contains("p", "Your email or password is incorrect!").should("be.visible");
   }
 }
 

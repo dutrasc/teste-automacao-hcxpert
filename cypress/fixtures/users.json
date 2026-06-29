@@ -18,7 +18,8 @@
   },
   "products": {
     "valid": "Blue Top",
-    "notAdded": "Men Tshirt",
+    "second": "Men Tshirt",
+    "notAdded": "Sleeveless Dress",
     "invalid": "Produto Inexistente 999"
   }
 }

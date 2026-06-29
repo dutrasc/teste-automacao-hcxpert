@@ -1,4 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { createAutomationExerciseUser } from "../../support/api/automationExerciseApi";
 import homePage from "../../support/page_objects/homePage";
 import loginPage from "../../support/page_objects/loginPage";
 import productsPage from "../../support/page_objects/productsPage";
@@ -13,7 +14,7 @@ Given("que estou autenticado para revisar o pedido", () => {
     const email = `qa.checkout.${Date.now()}@example.com`;
 
     checkoutUser = { ...validUser, email };
-    cy.createAutomationExerciseUser(checkoutUser, email);
+    createAutomationExerciseUser(checkoutUser, email);
     homePage.visit();
     homePage.goToLogin();
     loginPage.login(email, checkoutUser.password);

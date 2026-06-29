@@ -4,6 +4,7 @@ import productsPage from "../../support/page_objects/productsPage";
 import cartPage from "../../support/page_objects/cartPage";
 
 let cartProduct;
+let secondCartProduct;
 let productNotAdded;
 
 Given("que estou na pagina de produtos para adicionar item", () => {
@@ -44,4 +45,22 @@ Then("devo visualizar apenas o produto adicionado no carrinho", () => {
 
 Then("nao devo visualizar outro produto nao adicionado no carrinho", () => {
   cartPage.assertProductNotInCart(productNotAdded);
+});
+
+When("adiciono dois produtos ao carrinho", () => {
+  cy.fixture("users").then(({ products }) => {
+    cartProduct = products.valid;
+    secondCartProduct = products.second;
+    productsPage.search(cartProduct);
+    productsPage.addProductToCart(cartProduct);
+    productsPage.continueShopping();
+    productsPage.search(secondCartProduct);
+    productsPage.addProductToCart(secondCartProduct);
+  });
+});
+
+Then("devo visualizar os dois produtos no carrinho", () => {
+  productsPage.viewCartFromModal();
+  cartPage.assertProductInCart(cartProduct);
+  cartPage.assertProductInCart(secondCartProduct);
 });
