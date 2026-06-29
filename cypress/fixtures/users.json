@@ -1,0 +1,23 @@
+{
+  "validUser": {
+    "name": "QA Candidate",
+    "password": "Teste@12345",
+    "firstName": "QA",
+    "lastName": "Candidate",
+    "company": "HCXpert",
+    "address": "Rua Teste 123",
+    "country": "Canada",
+    "state": "Ontario",
+    "city": "Toronto",
+    "zipcode": "12345",
+    "mobile": "11999999999"
+  },
+  "invalidUser": {
+    "email": "usuario.invalido@example.com",
+    "password": "senha_invalida"
+  },
+  "products": {
+    "valid": "Blue Top",
+    "invalid": "Produto Inexistente 999"
+  }
+}
